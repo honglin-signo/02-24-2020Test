@@ -5,7 +5,7 @@ class Table extends React.Component {
   setTable = ({ name, description }) => {
     if (this.props.name === null) return;
     return (
-      <tbody>
+      <tbody style={{ textAlign: "left" }}>
         <tr className="Table">
           <td className="Table">{name}</td>
           <td className="Table">{description}</td>

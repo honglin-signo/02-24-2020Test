@@ -11,3 +11,11 @@ table {
   text-align: center;
   border: 1px solid black;
 }
+
+tbody:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody:nth-child(even) {
+  background-color: #ccc;
+}

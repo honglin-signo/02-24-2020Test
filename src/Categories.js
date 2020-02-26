@@ -10,7 +10,8 @@ class Categories extends React.Component {
       ss: [],
       info: [],
       selected: null,
-      selectedIndex: 0
+      selectedIndex: 0,
+      showDetail: false
     };
   }
 
@@ -47,30 +48,38 @@ class Categories extends React.Component {
 
     this.setState({
       selected: this.state.ss[index],
-      selectedIndex: index
+      selectedIndex: index,
+      showDetail: true
     });
   };
 
   render() {
-    return (
-      <div className='home'>
-        <div>
-        <h3>Menu Categories</h3>
-        <ul className="restaurant">
-          {this.state.list.map((item, index) => {
-            return (
-              <li key={item} onClick={this.handleClick.bind(this, index)}>
-                {item} - ({this.state.ss[index]})
-              </li>
-            );
-          })}
-        </ul>
-        </div>
+    let table;
+    if (this.state.showDetail) {
+      table = (
         <Table
           data={this.state.info}
           name={this.state.selected}
           index={this.state.selectedIndex}
         />
+      );
+    }
+    
+    return (
+      <div className="home">
+        <div>
+          <h3>Menu Categories</h3>
+          <ul className="restaurant">
+            {this.state.list.map((item, index) => {
+              return (
+                <li key={item} onClick={this.handleClick.bind(this, index)}>
+                  {item} - ({this.state.ss[index]})
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {table}
       </div>
     );
   }
