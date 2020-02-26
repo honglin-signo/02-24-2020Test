@@ -17,8 +17,8 @@ class Table extends React.Component {
   render() {
     const data = this.props.data;
     return (
-      <div>
-        Items in Category: ({this.props.name})
+      <div style={{ marginLeft: "100px" }}>
+        <h3>Items in Category: ({this.props.name})</h3>
         <table className="Table">
           <tbody style={{ textAlign: "center" }}>
             <tr className="Table">

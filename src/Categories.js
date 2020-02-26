@@ -53,7 +53,8 @@ class Categories extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='home'>
+        <div>
         <h3>Menu Categories</h3>
         <ul className="restaurant">
           {this.state.list.map((item, index) => {
@@ -64,6 +65,7 @@ class Categories extends React.Component {
             );
           })}
         </ul>
+        </div>
         <Table
           data={this.state.info}
           name={this.state.selected}

@@ -7,7 +7,7 @@ import "./styles.css";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className={"app"}>
         <h3>{"Welcome to Chef Chu's Restaurant"}</h3>
         <Router>
           <Link to="/">
